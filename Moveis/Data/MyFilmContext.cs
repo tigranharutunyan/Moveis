@@ -12,6 +12,8 @@ namespace Moveis.Data
         public DbSet<Film> Films { get; set; }  
         public DbSet<Country> Countries { get; set; }
         public DbSet<Director> Directors { get; set; }
+        public DbSet<User>  Users { get; set; } 
+        public DbSet<Admin> Admins { get; set; }    
 
     }
 }
