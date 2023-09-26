@@ -32,6 +32,17 @@ namespace Moveis.Service
             _filmRepostory.SaveChanges();
         }
 
+        public void Delete(int id)
+        {
+            var entityFilm =  _filmRepostory.GetById(id);
+            _filmRepostory.Delete(entityFilm);
+        }
+
+        public List<FilmAddEdit> Filter(FilmAddEditDropDown model)
+        {
+            throw new Exception();
+        }
+
         public FilmAddEdit GetById(int id)
         {
             var entityFilm = _filmRepostory.GetById(id);
@@ -48,6 +59,16 @@ namespace Moveis.Service
                 CountryId  = entityFilm.CountryId,
                 DirectorsId = entityFilm.DirectorId,
             };
+        }
+
+        public List<FilmAddEdit> GetDropDownList()
+        {
+            var entityFilm = _filmRepostory.GetAll();
+            return entityFilm.Select(e => new FilmAddEdit
+            {
+                Id = e.Id,
+                Name = e.Name,  
+            }).ToList();
         }
 
         public void Update(FilmAddEdit model)
