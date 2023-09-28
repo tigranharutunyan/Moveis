@@ -56,7 +56,7 @@ namespace Moveis.Service
             };
         }
 
-        public bool Login(UserLogViewModel model)
+        public bool Login(UserViewModel model)
         {
             var query = _userRepository.GetAll().Any(e => (e.Login == model.Login) && (e.Password == model.Password));
 

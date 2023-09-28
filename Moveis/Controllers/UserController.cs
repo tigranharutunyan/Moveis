@@ -25,7 +25,7 @@ namespace Moveis.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(UserLogViewModel model)
+        public IActionResult Login(UserViewModel model)
         {
             if (_userService.Login(model))
             {
