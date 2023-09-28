@@ -53,9 +53,11 @@ namespace Moveis.Service
 
         public bool LogIn(AdminViewModel model)
         {
-           var entityAdmin  = _adminRepository.GetAll().Any(a=>((a.Login == model.Login)&&(a.Password == model.Password)));
+          
+            var entityAdmin  = _adminRepository.GetAll().Any(a=>((a.Login == model.Login)&&(a.Password == model.Password)));
+
             return entityAdmin;
-        }
+         }
 
         public void Update(AdminViewModel model)
         {

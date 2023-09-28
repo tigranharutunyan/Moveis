@@ -56,12 +56,14 @@ namespace Moveis.Service
             };
         }
 
-        public bool Login(UserViewModel model)
+        public bool Login(UserLogViewModel model)
         {
             var query = _userRepository.GetAll().Any(e => (e.Login == model.Login) && (e.Password == model.Password));
+
             return query;
         }
 
+    
         public void  Update(UserViewModel model)
         {
             var entityUser = _userRepository.GetById(model.Id);
@@ -74,5 +76,7 @@ namespace Moveis.Service
             _userRepository.SaveChanges();
 
         }
+
+    
     }
 }

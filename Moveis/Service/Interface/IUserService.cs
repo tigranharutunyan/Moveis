@@ -9,6 +9,6 @@ namespace Moveis.Service.Interface
         public void Update(UserViewModel model);
         public UserViewModel GetById(int Id);
         public List<UserViewModel> GetAllUsers();
-        public bool Login(UserViewModel model);
+        public bool Login(UserLogViewModel model);
     }
 }

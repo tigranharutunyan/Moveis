@@ -9,7 +9,14 @@ namespace Moveis.Controllers
       
         public IActionResult Index()
         {
+
             return View();
-         }
+        }
+
+        public IActionResult UserList()
+        {
+
+            return View();
+        }
     }
 }
