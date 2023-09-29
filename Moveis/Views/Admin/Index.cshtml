@@ -8,28 +8,25 @@
 
 <html>
 <head>
+
+    <link rel="stylesheet" href="/css/AdminReg.css" />
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body>
-    <h1>Registration Admin</h1>
-    <form>
-        <div>
-            <label>
-                <input asp-for ="Name" placeholder="Enter your Name " />
-            </label>
-        </div>
-        <div>
-            <label>
-                <input asp-for="Login" placeholder="Enter your Login " />
-            </label>
-        </div>
-        <div>
-            <label>
-                <input asp-for="Password" placeholder="Enter your Password  " />
-            </label>
-        </div>
-        <button type="submit" >Save</button>
-    </form>
+
+    <div class="registration form ">
+      <header>Signup</header>
+      <form action="#">
+        <input type="text" placeholder="Enter your email">
+        <input type="password" placeholder="Create a password">
+        <input type="password" placeholder="Confirm your password">
+        <input type="button" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+    </div>
 </body>
 </html>

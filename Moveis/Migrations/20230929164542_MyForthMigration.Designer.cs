@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Moveis.Data;
 
@@ -11,9 +12,11 @@ using Moveis.Data;
 namespace Moveis.Migrations
 {
     [DbContext(typeof(MyFilmContext))]
-    partial class MyFilmContextModelSnapshot : ModelSnapshot
+    [Migration("20230929164542_MyForthMigration")]
+    partial class MyForthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
