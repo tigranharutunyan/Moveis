@@ -12,7 +12,12 @@ namespace Moveis.Controllers
         { 
               _adminService = adminservice;
         }
-        [HttpGet]
+
+        public IActionResult Index()
+        {
+           return View();
+        }
+        [HttpPost]
         public IActionResult Index(AdminViewModel model)
         {
             _adminService.Add(model);
