@@ -1,4 +1,4 @@
-﻿html {
+﻿/*html {
     font-size: 14px;
     position: relative;
     min-height: 100%;
@@ -19,3 +19,11 @@
 body {
     margin-bottom: 60px;
 }
+*/
+.gradient-custom {
+    background-image: url("https://miro.medium.com/v2/resize:fit:1358/1*yIzUmPvTvPP9BojTkxGxJA.jpeg");
+    width: 100%;
+    height: 95%;
+    background-size: cover;
+}
+
