@@ -33,7 +33,13 @@ namespace Moveis.Service
 
         public DirectorAddEdit GetById(int id)
         {
+            var entityDirector = _directorRepostory.GetById(id);
+            return new DirectorAddEdit()
+            {
+                Id = entityDirector.Id,
+                Name = entityDirector.Name,
 
+            };
         }
         private List<int> GetDirectorsId()
         {
