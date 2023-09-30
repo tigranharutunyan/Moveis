@@ -18,10 +18,10 @@
     <div class="registration form ">
       <header>Signup</header>
       <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+        <input asp-for = "Name" placeholder="Enter your Name ">
+        <input asp-for = "Login" placeholder="Create a Login">
+        <input asp-for="Password" type="password" placeholder="Enter your password">
+            <button type="submit">Save</button>
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
