@@ -24,7 +24,7 @@ namespace Moveis.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddAdmin(AdminViewModel model)
+        public IActionResult LogAdmin(AdminViewModel model)
         {
             if (_adminService.LogIn(model))
             {

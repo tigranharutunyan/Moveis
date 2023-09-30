@@ -9,23 +9,25 @@
 <html>
 <head>
 
-    <link rel="stylesheet" href="/css/AdminReg.css" />
+    <link rel="stylesheet" href="@Url.Content("~/css/AdminReg.css")" />
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body>
 
-    <div class="registration form ">
-      <header>Signup</header>
-      <form action="#">
+    <div class="registration form">
+     
+        <header>Signup</header>
+      <form method="post">
         <input asp-for = "Name" placeholder="Enter your Name ">
         <input asp-for = "Login" placeholder="Create a Login">
         <input asp-for="Password" type="password" placeholder="Enter your password">
             <button type="submit">Save</button>
       </form>
       <div class="signup">
-        <span class="signup">Already have an account?
-         <label for="check">Login</label>
+            <span class="signup">
+                Already have an account?
+                <label href="@Url.Action("RegistrationForm", "Registration")">Login</label>
         </span>
     </div>
 </body>

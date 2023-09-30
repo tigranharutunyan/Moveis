@@ -75,8 +75,8 @@ body {
         text-decoration: underline;
     }
 
-.form input.button {
-    color: #fff;
+    button{
+    color: red;
     background: #009579;
     font-size: 1.2rem;
     font-weight: 500;
@@ -84,7 +84,7 @@ body {
     margin-top: 1.7rem;
     cursor: pointer;
     transition: 0.4s;
-}
+     }
 
     .form input.button:hover {
         background: #006653;
@@ -93,12 +93,12 @@ body {
 .signup {
     font-size: 17px;
     text-align: center;
-}
+   }
 
     .signup label {
         color: #009579;
         cursor: pointer;
-    }
+     }
 
         .signup label:hover {
             text-decoration: underline;

@@ -12,6 +12,6 @@ namespace Moveis.Controllers
         public IActionResult RegistrationForm()
         {
             return View();
-        }
+          }
     }
 }
