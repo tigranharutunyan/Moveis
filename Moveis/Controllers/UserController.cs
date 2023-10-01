@@ -46,7 +46,7 @@ namespace Moveis.Controllers
         //}
        public IActionResult RegFilm()
         {
-            ViewBag.Diectors = _directorService.
+            ViewBag.Diectors = _directorService
             ViewBag.Country = _countryService.GetDropDownList();
             return View();
         }
