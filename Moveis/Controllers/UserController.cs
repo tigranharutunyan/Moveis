@@ -7,10 +7,14 @@ namespace Moveis.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
+        private readonly ICountryService _countryService;
 
-        public UserController()
+        public UserController(ICountryService countryService,IUserService userService)
         {
-            
+            _userService = userService;
+            _countryService = countryService;
+
+
         }
         public IActionResult Index()
         {
@@ -34,11 +38,16 @@ namespace Moveis.Controllers
             }
             else
             {
-                ViewBag.Error = "Something is vrong ";
+                ViewBag.Error = "Something is wrong ";
             }
           
             return View();
 
+        }
+        public IActionResult RegUser()
+        {
+            ViewBag.Country = _countryService.GetDropDownList();
+            return View();
         }
     }
 }
