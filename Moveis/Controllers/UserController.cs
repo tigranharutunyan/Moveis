@@ -8,12 +8,12 @@ namespace Moveis.Controllers
     {
         private readonly IUserService _userService;
         private readonly ICountryService _countryService;
-
-        public UserController(ICountryService countryService,IUserService userService)
+        private readonly IDirectorService _directorService;
+        public UserController(ICountryService countryService,IUserService userService,IDirectorService directorService)
         {
             _userService = userService;
             _countryService = countryService;
-
+            _directorService = directorService;
 
         }
         public IActionResult Index()
@@ -28,24 +28,25 @@ namespace Moveis.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Login(UserViewModel model)
-        {
-            if (_userService.Login(model))
-            {
+        //[HttpPost]
+        //public IActionResult Login(UserViewModel model)
+        //{
+        //    if (_userService.Login(model))
+        //    {
 
-                return RedirectToAction("UserList", "Home");
-            }
-            else
-            {
-                ViewBag.Error = "Something is wrong ";
-            }
+        //        return RedirectToAction("UserList", "Home");
+        //    }
+        //    else
+        //    {
+        //        ViewBag.Error = "Something is wrong ";
+        //    }
           
-            return View();
+        //    return View();
 
-        }
-        public IActionResult RegUser()
+        //}
+       public IActionResult RegFilm()
         {
+            ViewBag.Diectors = _directorService.
             ViewBag.Country = _countryService.GetDropDownList();
             return View();
         }

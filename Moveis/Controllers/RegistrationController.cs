@@ -3,7 +3,7 @@
 namespace Moveis.Controllers
 {
     public class RegistrationController : Controller
-    {
+    { }
         public IActionResult Index()
         {
             return View();
@@ -13,5 +13,11 @@ namespace Moveis.Controllers
         {
             return View();
           }
+        public IActionResult RegFilm()
+        {
+            ViewBag.Diectors = _directorService
+            ViewBag.Country = _countryService.GetDropDownList();
+            return View();
+        }
     }
 }
