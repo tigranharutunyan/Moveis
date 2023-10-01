@@ -8,12 +8,15 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  
     <meta name="viewport" content="width=device-width" />
+
     <title>Index</title>
 </head>
 <body>
     <h1>Registration Admin</h1>
-    <form>
+    <form method="post">
         <div>
             <label>
                 <input asp-for ="Name" placeholder="Enter your Name " />
@@ -21,15 +24,22 @@
         </div>
         <div>
             <label>
-                <input asp-for="Login" placeholder="Enter your Login " />
+                <input asp-for="Login" type="password" placeholder="Enter your Login " />
             </label>
         </div>
         <div>
             <label>
-                <input asp-for="Password" placeholder="Enter your Password  " />
+                <input asp-for="Password" type="password" placeholder="Enter your Password  " />
+                <i class="far fa-eye" id="togglePassword"></i>
             </label>
         </div>
         <button type="submit" >Save</button>
     </form>
+    <script>
+
+
+
+
+    </script>
 </body>
 </html>

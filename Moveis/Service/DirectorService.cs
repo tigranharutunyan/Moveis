@@ -41,11 +41,16 @@ namespace Moveis.Service
 
             };
         }
+
+
+        public List<>
         private List<int> GetDirectorsId()
         {
             Director director = new Director();
              var list =  director.DirectorFilms.Select(d=>d.Id).ToList();
             return list;
         }
+
+
     }
 }

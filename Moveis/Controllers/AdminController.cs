@@ -22,7 +22,7 @@ namespace Moveis.Controllers
         {
             _adminService.Add(model);
             return View();
-        }
+         }
         [HttpPost]
         public IActionResult AddAdmin(AdminViewModel model)
         {

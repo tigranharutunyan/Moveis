@@ -1,5 +1,6 @@
 ﻿using Moveis.ViewModel.Admin;
 using Moveis.ViewModel.Director;
+using Moveis.ViewModel.Film;
 
 namespace Moveis.Service.Interface
 {
@@ -9,7 +10,7 @@ namespace Moveis.Service.Interface
         void Delete(int id);
         DirectorAddEdit GetById(int id);
         //List<DirectorAddEdit> GetAll();
-         
+        List<> GetListForDropDown(); 
 
        
     }

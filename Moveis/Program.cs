@@ -16,7 +16,7 @@ namespace Moveis
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<MyFilmContext>(
-                option => option.UseSqlServer(builder.Configuration.GetConnectionString("MyFilmMV50")));
+                option => option.UseSqlServer(builder.Configuration.GetConnectionString("ArenMoviesDb")));
            
             builder.Services.AddScoped<IFilmRepostory, FilmRepository>();
             builder.Services.AddScoped<IDirectorRepository, DirectorRepository>();
