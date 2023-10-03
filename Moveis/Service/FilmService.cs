@@ -38,12 +38,17 @@ namespace Moveis.Service
             _filmRepostory.Delete(entityFilm);
         }
 
-        //public List<FilmAddEdit> Filter(FilmAddEditDropDown model)
-        //{
-        //    var entityFilm = _filmRepostory.GetAll().Any(e => (e.Name.ToLower() == model.Name.ToLower() || (e.Genre == model.Genre))
-        //    && (e.Lenguage == model.Lenguage) || (e.CountryId == model.CountryId) || (e.AllowAge == model.AllowAge));
-        //    return 
-        //}
+        public List<FilmAddEdit> Filter(FilmAddEditDropDown model)
+        {
+            var films = _filmRepostory.GetAll();
+            foreach(var film in films)
+            {
+                return 
+            }
+
+           
+          
+        }
 
         public FilmAddEdit GetById(int id)
         {

@@ -17,9 +17,7 @@ namespace Moveis.Service
         {
             Director entityDirector = new Director();
             entityDirector.Id = model.Id;
-            entityDirector.Name = model.Name;
-            //var Ids = GetDirectorsId();
-            //Ids = model.DirectorsId;
+            entityDirector.Name = model.Name;      
             _directorRepostory.Add(entityDirector);
             _directorRepostory.SaveChanges();
         }
@@ -30,6 +28,11 @@ namespace Moveis.Service
             var entityDirector = _directorRepostory.GetById(id);
             _directorRepostory.Delete(entityDirector);
          
+        }
+
+        public List<DirectorAddEdit> Filter()
+        {
+            throw new NotImplementedException();
         }
 
         //public List<DirectorDropDown> GetAll()
@@ -52,11 +55,6 @@ namespace Moveis.Service
 
             };
         }
-        //private List<int> GetDirectorsId()
-        //{
-        //    Director director = new Director();
-        //     var list =  director.DirectorFilms.Select(d=>d.Id).ToList();
-        //    return list;
-        //}
+       
     }
 }

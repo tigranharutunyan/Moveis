@@ -8,7 +8,7 @@ namespace Moveis.Service.Interface
         void Add(DirectorAddEdit model);
         void Delete(int id);
         DirectorAddEdit GetById(int id);
-        //List<DirectorDropDown> GetAll();
+        List<DirectorDropDown> GetAll();
         List<DirectorAddEdit> Filter();
          
 
