@@ -45,7 +45,7 @@
             </label>
         </div>
         <select asp-for="CountryId">
-            <option disabled ="disabled" selected="selected">Choose</option>
+            <option >Choose</option>
             @foreach(var item in ViewBag.Country)
             {
                 <option value="@item.Id">@item.Name</option>
