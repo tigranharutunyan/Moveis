@@ -38,14 +38,18 @@ namespace Moveis.Service
             _filmRepostory.Delete(entityFilm);
         }
 
-        public List<FilmAddEdit> Filter(FilmAddEditDropDown model)
+        public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model)
         {
-            var films = _filmRepostory.GetAll();
-            foreach(var film in films)
-            {
-                return 
-            }
-
+            var films = GetDropDownList();
+            return films.Where(f =>
+            (model.Name == null || (f.Name.ToLower().Contains(model.Name.ToLower())
+            && (model.AllowAge == null || (f.AllowAge == model.AllowAge))
+            && (model.Genre == 0 || (f.Genre == model.Genre))
+            && (model.Lenguage == 0 || (f.Lenguage == model.Lenguage))
+            && (model.Quality == 0 || (f.Quality == model.Quality))
+            && (model.DOC == null || (f.DOC == model.DOC))
+            && (model.CountryId == 0 || (f.CountryId == model.CountryId))
+            && (model.DirectorId == 0 || (f.DirectorsId == model.DirectorId))))).ToList();
            
           
         }
@@ -74,7 +78,15 @@ namespace Moveis.Service
             return entityFilm.Select(e => new FilmAddEdit
             {
                 Id = e.Id,
-                Name = e.Name,  
+                Name = e.Name, 
+                Genre = e.Genre,
+                Quality = e.Quality,
+                Lenguage = e.Lenguage ,
+                CountryId = e.CountryId,
+                DirectorsId = e.DirectorId,
+                Duration = e.Duration,
+                AllowAge = e.AllowAge,
+                DOC = e.DOC,
             }).ToList();
         }
 
@@ -93,5 +105,7 @@ namespace Moveis.Service
             entityFilm.CountryId =model.CountryId;
             _filmRepostory.SaveChanges();
         }
+
+        
     }
 }

@@ -8,6 +8,7 @@ namespace Moveis.Data.Repositories.Interface
         Film GetById(int id);
         List<Film> GetAll();
         void Delete(Film film);
+        //List<Film> Filter(Film film);
         void SaveChanges();
 
     }

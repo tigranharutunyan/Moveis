@@ -35,6 +35,11 @@ namespace Moveis.Service
             throw new NotImplementedException();
         }
 
+        public List<DirectorDropDown> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         //public List<DirectorDropDown> GetAll()
         //{
         //    var data = _directorRepostory.GetAll();
