@@ -2,6 +2,7 @@
 using Moveis.Service.Interface;
 using Moveis.ViewModel.Director;
 using Moveis.Data.Entity;
+
 namespace Moveis.Service
 {
     public class DirectorService:IDirectorService
@@ -16,9 +17,7 @@ namespace Moveis.Service
         {
             Director entityDirector = new Director();
             entityDirector.Id = model.Id;
-            entityDirector.Name = model.Name;
-            var Ids = GetDirectorsId();
-            Ids = model.DirectorsId;
+            entityDirector.Name = model.Name;      
             _directorRepostory.Add(entityDirector);
             _directorRepostory.SaveChanges();
         }
@@ -31,6 +30,21 @@ namespace Moveis.Service
          
         }
 
+        public List<DirectorAddEdit> Filter()
+        {
+            throw new NotImplementedException();
+        }
+
+        //public List<DirectorDropDown> GetAll()
+        //{
+        //    var data = _directorRepostory.GetAll();
+        //    return data.Select(d=> new DirectorDropDown
+        //    {
+        //        Id = d.Id,
+        //        Name = d.Name,
+        //    }).ToList();    
+        //}
+
         public DirectorAddEdit GetById(int id)
         {
             var entityDirector = _directorRepostory.GetById(id);
@@ -41,11 +55,6 @@ namespace Moveis.Service
 
             };
         }
-        private List<int> GetDirectorsId()
-        {
-            Director director = new Director();
-             var list =  director.DirectorFilms.Select(d=>d.Id).ToList();
-            return list;
-        }
+       
     }
 }

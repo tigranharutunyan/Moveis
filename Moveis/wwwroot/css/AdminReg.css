@@ -11,7 +11,9 @@ body {
     height: 100vh;
     width: 100%;
     background: #23d3ac;
-    background: url(https://images.unsplash.com/photo-1488330890490-c291ecf62571?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)center no-repeat;
+    background: url(
+      https://assets.nflxext.com/ffe/siteui/vlv3/9db4a880-3034-4e98-bdea-5d983e86bf52/e4335016-34fb-4385-a3a1-c1e3d25d1c3f/AM-en-20230925-popsignuptwoweeks-perspective_alpha_website_large.jpg)
+    center no-repeat;
     background-size: cover;
 }
 .container {
@@ -75,20 +77,38 @@ body {
         text-decoration: underline;
     }
 
-    button{
-    color: red;
-    background: #009579;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-top: 1.7rem;
-    cursor: pointer;
-    transition: 0.4s;
-     }
+/* for btn */
 
-    .form input.button:hover {
-        background: #006653;
+button {
+    margin: 10px 200px;
+    padding: 15px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+    button:hover {
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;
     }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
 
 .signup {
     font-size: 25px;
@@ -120,3 +140,21 @@ body {
     border-radius: 15px;
     background: #FFFFFF;
 }
+
+
+
+
+/*    button{
+    color: red;
+    background: #009579;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    transition: 0.4s;
+     }
+
+    .form input.button:hover {
+        background: #006653;
+    }*/
