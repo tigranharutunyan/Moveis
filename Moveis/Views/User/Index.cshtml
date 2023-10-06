@@ -1,4 +1,6 @@
-﻿
+﻿@using Moveis.ViewModel.Film
+@using Moveis.Enum
+@model FilmAddEdit
 @{
     Layout = null;
 }
@@ -8,10 +10,49 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Film  Registration</title>
+    
 </head>
 <body>
+    <h1>Film Registration </h1>
+    <form method="post"> 
+        <div>
+            <label>
+                <input asp-for ="Name" placeholder=" Enter Film's Name" />
+            </label>
+        </div>
+        <div>
+            <label>
+                <input asp-for="AllowAge" placeholder="  Enter Film's Allows Age"  />
+            </label>
+        </div>
+        <div>
+            <label>
+                <select asp-for="Genre" asp-items="Html.GetEnumSelectList<GenreEnum>()"></select>
 
-    <h1>Index</h1>
+            </label>
+        </div>
+        <div>
+            <label>
+                <select asp-for="Lenguage" asp-items="Html.GetEnumSelectList<LenguageEnum>()"></select>
+
+            </label>
+        </div>
+        <div>
+            <label>
+                <select asp-for="Quality" asp-items="Html.GetEnumSelectList<QualityEnum>()"></select>
+
+            </label>
+        </div>
+        <select asp-for="CountryId">
+            <option disabled ="disabled" selected="selected">Choose</option>
+            @foreach(var item in ViewBag.Country)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+
+        </select>
+
+    </form>
 </body>
 </html>

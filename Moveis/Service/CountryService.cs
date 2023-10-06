@@ -33,6 +33,16 @@ namespace Moveis.Service
             
         }
 
+        public List<CountryAddEdit> GetDropDownList()
+        {
+            var dropDownCountry = _countryRepository.GetAll();
+            return dropDownCountry.Select( c=> new CountryAddEdit
+            {
+                Id = c.Id,
+                Name = c.Name,
+            }).ToList();
+        }
+
         public void Update(CountryAddEdit model)
         {
             var entityCountry = _countryRepository.GetById(model.Id);

@@ -16,9 +16,9 @@
 <body>
 
     <form action="">
-        <input type="search" required>
+        <input id="myInput" type="search" required>
         <i class="fa fa-search"></i>
-        <a href="javascript:void(0)" id="clear-btn">Clear</a>
+        <a @* href="javascript:void(0)" *@ onclick="document.getElementById('myInput').value = ''" id="clear-btn" > Clear </a>
     </form>
 
 </body>

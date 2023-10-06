@@ -7,5 +7,6 @@ namespace Moveis.Service.Interface
         void Add(CountryAddEdit model);
         void Update(CountryAddEdit model);
         CountryAddEdit GetById(int id);
+        List<CountryAddEdit> GetDropDownList();
     }
 }
