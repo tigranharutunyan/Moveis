@@ -6,10 +6,10 @@ namespace Moveis.Service
 {
     public class DirectorService:IDirectorService
     {
-        private readonly IDirectorRepository _directorRepostory;
+        private readonly IDirectorRepository _directorRepository;
         public DirectorService(IDirectorRepository directorRepostory)
         {
-            _directorRepostory = directorRepostory;
+            _directorRepository = directorRepostory;
         }
 
         public void Add(DirectorAddEdit model)
@@ -19,21 +19,21 @@ namespace Moveis.Service
             entityDirector.Name = model.Name;
             var Ids = GetDirectorsId();
             Ids = model.DirectorsId;
-            _directorRepostory.Add(entityDirector);
-            _directorRepostory.SaveChanges();
+            _directorRepository.Add(entityDirector);
+            _directorRepository.SaveChanges();
         }
              
 
         public void Delete(int id)
         {
-            var entityDirector = _directorRepostory.GetById(id);
-            _directorRepostory.Delete(entityDirector);
+            var entityDirector = _directorRepository.GetById(id);
+            _directorRepository.Delete(entityDirector);
          
         }
 
         public DirectorAddEdit GetById(int id)
         {
-            var entityDirector = _directorRepostory.GetById(id);
+            var entityDirector = _directorRepository.GetById(id);
             return new DirectorAddEdit()
             {
                 Id = entityDirector.Id,
@@ -43,7 +43,14 @@ namespace Moveis.Service
         }
 
 
-        public List<>
+        public List<DirectorDropDownViewModel> GetListForDropDown()
+        {
+            var directorData = _directorRepository.GetAll();
+            return directorData.Select(d => new DirectorDropDownViewModel()
+            {   Id = d.Id,  
+                Name = d.Name,  
+            }).ToList();  
+        }
         private List<int> GetDirectorsId()
         {
             Director director = new Director();

@@ -5,13 +5,13 @@ using Moveis.ViewModel.Film;
 
 namespace Moveis.Service
 {
-    public class FilmService:IFilmService
+    public class FilmService :IFilmService
     {
         private readonly IFilmRepostory _filmRepostory;
         public FilmService(IFilmRepostory filmRepostory)
         {
             _filmRepostory = filmRepostory;
-        }
+         }
 
         public void Add(FilmAddEdit model)
         {
@@ -34,16 +34,52 @@ namespace Moveis.Service
 
         public void Delete(int id)
         {
-            var entityFilm =  _filmRepostory.GetById(id);
+            var entityFilm = _filmRepostory.GetById(id);
             _filmRepostory.Delete(entityFilm);
         }
 
-        //public List<FilmAddEdit> Filter(FilmAddEditDropDown model)
+
+        //Tigran Method
+        public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model)
+        {
+            var films = GetDropDownList();
+            return films.Where(f =>
+            (model.Name == null || (f.Name.ToLower().Contains(model.Name.ToLower())
+            && (model.AllowAge == null || (f.AllowAge == model.AllowAge))
+            && (model.Genre == 0 || (f.Genre == model.Genre))
+            && (model.Lenguage == 0 || (f.Lenguage == model.Lenguage))
+            && (model.Quality == 0 || (f.Quality == model.Quality))
+            && (model.DOC == null || (f.DOC == model.DOC))
+            && (model.CountryId == 0 || (f.CountryId == model.CountryId))
+            && (model.DirectorId == 0 || (f.DirectorsId == model.DirectorId))))).ToList();
+
+
+        }
+
+
+
+
+
+
+
+
+        //public List<FilmViewModel> Filter(FilmFilterViewModel model)
         //{
-        //    var entityFilm = _filmRepostory.GetAll().Any(e => (e.Name.ToLower() == model.Name.ToLower() || (e.Genre == model.Genre))
-        //    && (e.Lenguage == model.Lenguage) || (e.CountryId == model.CountryId) || (e.AllowAge == model.AllowAge));
-        //    return 
-        //}
+        //    var Films = GetAllFilms();
+        //    return Films.Where(f => (f.Name == null || model.Name.ToLower() == f.Name.ToLower())).ToList();
+           
+        // }
+
+        //private List<FilmViewModel> GetAllFilms()
+        //{
+        //    var Films = _filmRepostory.GetAll();
+        //    return Films.Select(x => new FilmViewModel
+        //    {
+        //        Id = x.Id,
+        //        Name = x.Name
+        //    }).ToList();
+        // }
+       
 
         public FilmAddEdit GetById(int id)
         {
@@ -70,7 +106,15 @@ namespace Moveis.Service
             {
                 Id = e.Id,
                 Name = e.Name,  
-            }).ToList();
+                DOC = e.DOC,
+                AllowAge = e.AllowAge,
+                Duration = e.Duration,
+                Lenguage = e.Lenguage,  
+                Genre = e.Genre,    
+                Quality = e.Quality,
+                CountryId = e.CountryId,
+                DirectorsId = e.DirectorId
+             }).ToList();
         }
 
         public void Update(FilmAddEdit model)
@@ -87,6 +131,11 @@ namespace Moveis.Service
             entityFilm.DirectorId = model.DirectorsId;
             entityFilm.CountryId =model.CountryId;
             _filmRepostory.SaveChanges();
+        }
+
+        List<FilmAddEdit> IFilmService.Filter(FilmFilterViewModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

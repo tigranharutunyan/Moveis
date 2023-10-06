@@ -26,7 +26,8 @@ namespace Moveis.Data.Repositories
 
         public List<Film> GetAll()
         {
-            return  _filmContext.Films.ToList();
+            var a =  _filmContext.Films.ToList();
+            return a;
         }
 
         public Film GetById(int id)

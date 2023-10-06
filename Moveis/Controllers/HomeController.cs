@@ -2,6 +2,7 @@
 using Moveis.Models;
 using System.Diagnostics;
 using Moveis.Service.Interface;
+using Moveis.ViewModel.Film;
 
 namespace Moveis.Controllers
 {
@@ -18,15 +19,27 @@ namespace Moveis.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var director = _directorService.GetListForDropDown();
-            ViewBag.
+            FilmAddEditDropDown model = new FilmAddEditDropDown();
+            ViewBag.Filter = _filmService.GetByFilter(model);
             return View();
-        }
+         
+          }
 
+        [HttpPost]
+        public IActionResult Index(FilmAddEditDropDown model)
+        {
+            ViewBag.Filter = _filmService.GetByFilter(model);
+            return View();
+
+         }
         public IActionResult UserList()
         {
 
             return View();
         }
+
+        
+
+       
     }
 }

@@ -10,7 +10,7 @@ namespace Moveis.Service.Interface
         void Delete(int id);
         DirectorAddEdit GetById(int id);
         //List<DirectorAddEdit> GetAll();
-        List<> GetListForDropDown(); 
+        List<DirectorDropDownViewModel> GetListForDropDown(); 
 
        
     }

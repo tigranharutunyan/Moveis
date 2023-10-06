@@ -5,5 +5,7 @@
         Armenian = 1,
         Engilsh = 2,
         Russian = 3,
+        Espanyol=4,
+
     }
 }

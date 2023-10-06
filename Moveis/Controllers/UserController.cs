@@ -25,21 +25,22 @@ namespace Moveis.Controllers
 
         public IActionResult Login()
         {
+            
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(UserViewModel model)
+        public IActionResult Login(UserLoginViewModel model)
         {
             if (_userService.Login(model))
             {
 
-                return RedirectToAction("UserList", "Home");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewBag.Error = "Something is wrong ";
-            }
+             }
           
             return View();
 

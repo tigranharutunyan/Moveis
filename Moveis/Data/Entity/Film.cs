@@ -19,5 +19,6 @@ public class Film
     public GenreEnum Genre { get; set; }   
     public DateTime? DOC { get; set; }
     public string? Duration { get; set; }    
+    public string ImageUrl { get; set; }
 
-}
+ }

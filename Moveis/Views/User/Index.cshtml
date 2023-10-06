@@ -1,6 +1,7 @@
 ﻿@using Moveis.ViewModel.Film
 @using Moveis.Enum
 @model FilmAddEdit
+
 @{
     Layout = null;
 }
@@ -49,7 +50,7 @@
             @foreach(var item in ViewBag.Country)
             {
                 <option value="@item.Id">@item.Name</option>
-            }
+             }
 
         </select>
 

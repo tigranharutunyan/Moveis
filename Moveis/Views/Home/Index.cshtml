@@ -1,4 +1,5 @@
-﻿
+﻿@using Moveis.ViewModel.Film;
+@model FilmAddEditDropDown;
 @{
     Layout = null;
 }
@@ -8,18 +9,98 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="/css/site.css"/>
+    <link rel="stylesheet" href="@Url.Content("~/css/Display/index.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/Display/Display.css")" />
 
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body>
 
-    <form action="">
-        <input id="myInput" type="search" required>
-        <i class="fa fa-search"></i>
-        <a @* href="javascript:void(0)" *@ onclick="document.getElementById('myInput').value = ''" id="clear-btn" > Clear </a>
+    
+    
+    <form method="post">
+       
+        <div class="search"> <button type="submit" >Search </button> </div>
+        <input asp-for="Name" type="search" placeholder="Search Film Name" required>
+         <i class="fa fa-search"></i>
+         @* <a onclick="document.getElementById('myInput').value=''" id = "clear-btn"> Clear </a> *@
+       
     </form>
 
+
+    <button type="submit" class="signupbtn" onclick="window.location='@Url.Action("RegistrationForm", "Registration")'">Sign Up</button>
+
+    <button type="submit" class="loginbtn" onclick="window.location='@Url.Action("Login", "User")'">Login</button>
+
+    
+
+
+@* 
+    <div>
+        @foreach (var item in ViewBag.Filter)
+        {
+            <div>
+                <h1>
+                    @item.Name;
+                </h1>  
+
+            </div>
+         }
+    </div> *@
+
+
+
+
+
+
+
+
+
+    
+    <div class="wrapper">
+   
+            <div class="parent" onclick="">
+                <div class="child bg-one">
+                    <a href="#">Divergent </a>
+                </div>
+            </div>
+      
+       
+         <div class="parent right" onclick="">
+            <div class="child bg-two">
+                <a href="#">Home Alone</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="parent" onclick="">
+            <div class="child bg-three">
+                <a href="#">Սահմանին</a>
+            </div>
+        </div>
+
+        <div class="parent right" onclick="">
+            <div class="child bg-four">
+                <a href="#">Մի Վախեցիր</a>
+            </div>
+        </div>
+
+        <div class="parent" onclick="">
+            <div class="child bg-five">
+                <a href="#">Home Alone</a>
+            </div>
+        </div>
+
+        <div class="parent right" onclick="">
+            <div class="child bg-six">
+                <a href="#">Avatar</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ 
 </body>
 </html>

@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchFilm</title>
+</head>
+<body>
+
+    <div>
+        @foreach (var item in ViewBag.FilmFilter)
+        {
+             <div>
+               
+                        @item.Name
+               
+
+             </div>
+        }
+
+    </div>
+</body>
+</html>

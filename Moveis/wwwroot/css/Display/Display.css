@@ -24,7 +24,7 @@ nav {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-   /* margin-top: 5px;*/
+    margin-top: 5px;
    
 }
 
@@ -36,7 +36,7 @@ nav {
     width: 45%;
     margin: 20px;
     height: 300px;
-/*    border: 1px solid blue;*/
+    border: 1px solid blue;
     overflow: hidden;
     position: relative;
     float: left;
@@ -57,7 +57,7 @@ nav {
 
 /* Several different images */
 .bg-one {
-    background-image: url("../Images/harry-potter-movies-in-order-1-1677691297970.jpg");
+    background-image: url("../Images/images.jpg");
 }
 
 .bg-two {
@@ -73,19 +73,21 @@ nav {
 }
 
 .bg-five {
-    background-image: url("../Images/Divergent-UK-Poster.webp");
+    background-image: url("../Images/harry-potter-movies-in-order-1-1677691297970.jpg");
 }
 .bg-six {
-    background-image: url("../Images/avatar-3-release.webp");
+    background-image: url("../Images/avatar-background-8t5bkculh0jr4m3c.jpg");
  }
 
 
-a {
-    display: none;
-    font-size: 35px;
-    color: #ffffff !important;
-    font-family: sans-serif;
-    text-align: center;
+
+
+/*a {*/
+    /*display: none;*/
+    /*font-size: 35px;*/
+    /*color: #ffffff !important;*/
+    /*font-family: sans-serif;
+    text-align: left;
     margin: auto;
     position: absolute;
     top: 0;
@@ -94,8 +96,9 @@ a {
     right: 0;
     height: 50px;
     cursor: pointer;
-    /*text-decoration: none;*/
-}
+    text-decoration: none;
+    color:darkgreen;
+}*/
 
 .parent:hover .child, .parent:focus .child {
     -ms-transform: scale(1.2);

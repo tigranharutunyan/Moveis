@@ -10,5 +10,9 @@ namespace Moveis.Service.Interface
         //List<FilmAddEdit> Filter(FilmAddEditDropDown model);
         FilmAddEdit GetById(int id);
         void Delete(int id);
+        public List<FilmAddEdit> Filter(FilmFilterViewModel model);
+
+        public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model);
+
     }
 }
