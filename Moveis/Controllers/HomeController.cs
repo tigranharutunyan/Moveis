@@ -46,10 +46,5 @@ namespace Moveis.Controllers
             ViewBag.film = _filmService.GetByFilter(model);
             return View();
         }
-        public IActionResult FilmFilter(FilmAddEditDropDown model)
-        {
-             ViewBag.film = _filmService.GetByFilter(model);
-            return View();
-        }
     }
 }

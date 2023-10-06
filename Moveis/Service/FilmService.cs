@@ -38,6 +38,11 @@ namespace Moveis.Service
             _filmRepostory.Delete(entityFilm);
         }
 
+        public List<FilmAddEdit> Filter(FilmFilterViewModel model)
+        {
+            throw new NotImplementedException();
+        }
+
 
         //Tigran Method
         public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model)
@@ -56,21 +61,21 @@ namespace Moveis.Service
 
         }
 
-        public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model)
-        {
-            var films = GetDropDownList();
-            return films.Where(f =>
-            (model.Name == null || (f.Name.ToLower().Contains(model.Name.ToLower())
-            && (model.AllowAge == null || (f.AllowAge == model.AllowAge))
-            && (model.Genre == 0 || (f.Genre == model.Genre))
-            && (model.Lenguage == 0 || (f.Lenguage == model.Lenguage))
-            && (model.Quality == 0 || (f.Quality == model.Quality))
-            && (model.DOC == null || (f.DOC == model.DOC))
-            && (model.CountryId == 0 || (f.CountryId == model.CountryId))
-            && (model.DirectorId == 0 || (f.DirectorsId == model.DirectorId))))).ToList();
+        //public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model)
+        //{
+        //    var films = GetDropDownList();
+        //    return films.Where(f =>
+        //    (model.Name == null || (f.Name.ToLower().Contains(model.Name.ToLower())
+        //    && (model.AllowAge == null || (f.AllowAge == model.AllowAge))
+        //    && (model.Genre == 0 || (f.Genre == model.Genre))
+        //    && (model.Lenguage == 0 || (f.Lenguage == model.Lenguage))
+        //    && (model.Quality == 0 || (f.Quality == model.Quality))
+        //    && (model.DOC == null || (f.DOC == model.DOC))
+        //    && (model.CountryId == 0 || (f.CountryId == model.CountryId))
+        //    && (model.DirectorId == 0 || (f.DirectorsId == model.DirectorId))))).ToList();
            
           
-        }
+        //}
 
         public FilmAddEdit GetById(int id)
         {

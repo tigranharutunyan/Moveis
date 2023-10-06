@@ -44,10 +44,10 @@ namespace Moveis.Controllers
             return View();
 
         }
-        public IActionResult RegUser()
-        {
-            ViewBag.Country = _countryService.GetDropDownList();
-            return View();
-        }
+        //public IActionResult RegUser()
+        //{
+        //    ViewBag.Country = _countryService.GetDropDownList();
+        //    return View();
+        //}
     }
 }
