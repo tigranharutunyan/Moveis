@@ -7,13 +7,12 @@ namespace Moveis.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        private readonly ICountryService _countryService;
-
-        public UserController(ICountryService countryService,IUserService userService)
+        
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _countryService = countryService;
-
+           
+           
 
         }
         public IActionResult Index()

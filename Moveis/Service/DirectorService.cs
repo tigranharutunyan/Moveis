@@ -2,6 +2,7 @@
 using Moveis.Service.Interface;
 using Moveis.ViewModel.Director;
 using Moveis.Data.Entity;
+
 namespace Moveis.Service
 {
     public class DirectorService:IDirectorService
@@ -30,6 +31,26 @@ namespace Moveis.Service
             _directorRepository.Delete(entityDirector);
          
         }
+
+        public List<DirectorAddEdit> Filter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<DirectorDropDown> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        //public List<DirectorDropDown> GetAll()
+        //{
+        //    var data = _directorRepostory.GetAll();
+        //    return data.Select(d=> new DirectorDropDown
+        //    {
+        //        Id = d.Id,
+        //        Name = d.Name,
+        //    }).ToList();    
+        //}
 
         public DirectorAddEdit GetById(int id)
         {

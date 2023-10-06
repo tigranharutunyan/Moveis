@@ -24,6 +24,12 @@ namespace Moveis.Data.Repositories
             _filmContext.SaveChanges();    
         }
 
+        //public List<Film> Filter(Film film)
+        //{
+        //    var entityFilter = _filmContext.Films.ToList();
+           
+        //}
+
         public List<Film> GetAll()
         {
             var a =  _filmContext.Films.ToList();

@@ -56,30 +56,21 @@ namespace Moveis.Service
 
         }
 
-
-
-
-
-
-
-
-        //public List<FilmViewModel> Filter(FilmFilterViewModel model)
-        //{
-        //    var Films = GetAllFilms();
-        //    return Films.Where(f => (f.Name == null || model.Name.ToLower() == f.Name.ToLower())).ToList();
+        public List<FilmAddEdit> GetByFilter(FilmAddEditDropDown model)
+        {
+            var films = GetDropDownList();
+            return films.Where(f =>
+            (model.Name == null || (f.Name.ToLower().Contains(model.Name.ToLower())
+            && (model.AllowAge == null || (f.AllowAge == model.AllowAge))
+            && (model.Genre == 0 || (f.Genre == model.Genre))
+            && (model.Lenguage == 0 || (f.Lenguage == model.Lenguage))
+            && (model.Quality == 0 || (f.Quality == model.Quality))
+            && (model.DOC == null || (f.DOC == model.DOC))
+            && (model.CountryId == 0 || (f.CountryId == model.CountryId))
+            && (model.DirectorId == 0 || (f.DirectorsId == model.DirectorId))))).ToList();
            
-        // }
-
-        //private List<FilmViewModel> GetAllFilms()
-        //{
-        //    var Films = _filmRepostory.GetAll();
-        //    return Films.Select(x => new FilmViewModel
-        //    {
-        //        Id = x.Id,
-        //        Name = x.Name
-        //    }).ToList();
-        // }
-       
+          
+        }
 
         public FilmAddEdit GetById(int id)
         {
@@ -105,16 +96,16 @@ namespace Moveis.Service
             return entityFilm.Select(e => new FilmAddEdit
             {
                 Id = e.Id,
-                Name = e.Name,  
-                DOC = e.DOC,
-                AllowAge = e.AllowAge,
-                Duration = e.Duration,
-                Lenguage = e.Lenguage,  
-                Genre = e.Genre,    
+                Name = e.Name, 
+                Genre = e.Genre,
                 Quality = e.Quality,
+                Lenguage = e.Lenguage ,
                 CountryId = e.CountryId,
-                DirectorsId = e.DirectorId
-             }).ToList();
+                DirectorsId = e.DirectorId,
+                Duration = e.Duration,
+                AllowAge = e.AllowAge,
+                DOC = e.DOC,
+            }).ToList();
         }
 
         public void Update(FilmAddEdit model)
@@ -133,9 +124,6 @@ namespace Moveis.Service
             _filmRepostory.SaveChanges();
         }
 
-        List<FilmAddEdit> IFilmService.Filter(FilmFilterViewModel model)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

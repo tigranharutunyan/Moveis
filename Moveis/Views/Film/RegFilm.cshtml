@@ -12,19 +12,19 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Film  Registration</title>
-    
+
 </head>
 <body>
     <h1>Film Registration </h1>
-    <form method="post"> 
+    <form method="post">
         <div>
             <label>
-                <input asp-for ="Name" placeholder=" Enter Film's Name" />
+                <input asp-for="Name" placeholder=" Enter Film's Name" />
             </label>
         </div>
         <div>
             <label>
-                <input asp-for="AllowAge" placeholder="  Enter Film's Allows Age"  />
+                <input asp-for="AllowAge" placeholder="  Enter Film's Allows Age" />
             </label>
         </div>
         <div>
@@ -50,10 +50,17 @@
             @foreach(var item in ViewBag.Country)
             {
                 <option value="@item.Id">@item.Name</option>
-             }
-
+            }
         </select>
+        <div>
+            <label>
+                <input type ="Search" asp-for ="DirectorsId" />
+
+
+            </label>
+        </div>
 
     </form>
 </body>
 </html>
+

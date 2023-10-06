@@ -5,7 +5,8 @@ namespace Moveis.Data.Repositories
 {
     public class UserRepository:IUserRepository
     {
-        private readonly MyFilmContext _filmContext;    
+        private readonly MyFilmContext _filmContext; 
+        
         public UserRepository(MyFilmContext filmContext)
         {
             _filmContext = filmContext; 
